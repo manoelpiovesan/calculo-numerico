@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Diferenciação Numérica</title>
+    </head>
+
+    <body>
+      
+        <div class="header">
+            <img src="../img/logouerj.svg" alt="">
+            <div class="sub-titulo">
+                <h1>Tarefa 3</h1>
+                <div class="grey">
+                    
+                    <span>Cálculo Numérico | 2022.1</span>
+                    <br>
+                    <span>Professor Hermes Alves Filho</span>
+                    <h5>Fórmulas de 3 pontos: Centrada e Não-centrada.</h5>
+                </div>
+            
+            <hr>
+            <p><strong>Manoel Rodrigues</strong> | <span style="font-weight: 400;">201910073511</span> </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="../index.html"><div class="btn btn-dark"> <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNMTg5LjMsMTI4LjRMODksMjMzLjRjLTYsNS44LTksMTMuNy05LDIyLjRjMCw4LjcsMywxNi41LDksMjIuNGwxMDAuMywxMDUuNGMxMS45LDEyLjUsMzEuMywxMi41LDQzLjIsMCAgYzExLjktMTIuNSwxMS45LTMyLjcsMC00NS4yTDE4NC40LDI4OGgyMTdjMTYuOSwwLDMwLjYtMTQuMywzMC42LTMyYzAtMTcuNy0xMy43LTMyLTMwLjYtMzJoLTIxN2w0OC4yLTUwLjQgIGMxMS45LTEyLjUsMTEuOS0zMi43LDAtNDUuMkMyMjAuNiwxMTUuOSwyMDEuMywxMTUuOSwxODkuMywxMjguNHoiLz48L3N2Zz4=" style="width: 30px; filter: invert(1);" alt=""> Voltar</div></a>
+                  
+                </div>
+            </div>
+            
+            <div class="container">
+                <h4 class="text-center">Fórmula Centrada</h4>
+                <p></p>
+                <hr>
+                
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card switcher">
+                                    <div class="card-body">
+                                        <div class="switch">
+                                            <span style="margin-right: 5px;">Usar função </span>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="switch-funcao-dados">
+                                                <label class="form-check-label" for="switch-funcao-dados">Usar dados</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                
+                                
+                              <div class="col" id="usar-funcao">
+                                    <label for="">Função</label>
+                                    <select class="form-select" aria-label="Default select example" id='funcao-escolhida'>
+                                        <option selected>Selecione a função desejada</option>
+                                        <option value="1">f(x) = x² - 2</option>
+                                        <option value="2">f(x) = 2x - cos(2x)</option>
+                                        <option value="3">f(x) = x² - cos(x)</option>
+                                        <option value="4">f(x) = x+1-senh(x)</option>
+                                        <!--inserir aqui as funcoes-->
+                                    </select>
+                                    <p></p> 
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="funcao" id='funcao-display'></span>
+                                                </div>              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p></p>
+                                    <div class="row" id='dados-h-x0'>
+                                        <div class="col">
+                                            <label for="x0">X<small>0</small></label>
+                                            <input id='x0' placeholder='x0' type="number" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label for="h">h</label>
+                                            <input id="h" placeholder='h' type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <p></p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    f(X<small>0</small>-h)=f(<span id='x0-menos-h-display'></span>)=<span id='fx0-menos-h-display'></span>
+                                                    <hr>
+                                                    f(X<small>0</small>+h)=f(<span id='x0-mais-h-display'></span>)=<span id='fx0-mais-h-display'></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              </div>
+                              <div class="col" id='usar-dados' hidden>
+                                <label for="">Dados</label>
+                                
+                                    <table class="table" id='table-dados'>
+                                        <thead class="text-center">
+                                          <tr>
+                                            <th scope="col">x</th>
+                                            <th scope="col">f(x)</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td scope="row"><input type="number" id="x0-menos-h" placeholder='x0-h' class="form-control"></td>
+                                            <td><input type="number" placeholder='f(x0-h)' id="fx0-menos-h" class="form-control"></td>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row"><input type="number" id="x0-mais-h" placeholder='x0+h' class="form-control"></td>
+                                            <td><input type="number" placeholder='f(x0+h)' id="fx0-mais-h" class="form-control"></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <td scope="row">X<small>0</small>: <span id='x0-display'></span> </td>
+                                            <td>h: <span id='h-display'></span> </td>
+                                          </tr> 
+                                        </tbody>
+                                      </table>
+                                
+                              </div>
+                            
+                            </div>
+                            <div class="card-footer text-center botoes">
+                                    <button class="btn btn-primary" id="btn-centrada"><img src="../img/snowflakes.png" width="20px" alt=""> Aproximar Derivada</button>
+                                    <button class="btn btn-danger" id="btn-limpar"><img class='icon' style="width: 20px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGlkPSJHbHlwaCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik02LDEydjE1YzAsMS42NTQsMS4zNDYsMywzLDNoMTRjMS42NTQsMCwzLTEuMzQ2LDMtM1YxMkg2eiBNMTIsMjVjMCwwLjU1Mi0wLjQ0OCwxLTEsMXMtMS0wLjQ0OC0xLTF2LTkgIGMwLTAuNTUyLDAuNDQ4LTEsMS0xczEsMC40NDgsMSwxVjI1eiBNMTcsMjVjMCwwLjU1Mi0wLjQ0OCwxLTEsMXMtMS0wLjQ0OC0xLTF2LTljMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMVYyNXogTTIyLDI1ICBjMCwwLjU1Mi0wLjQ0OCwxLTEsMXMtMS0wLjQ0OC0xLTF2LTljMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMVYyNXoiIGlkPSJYTUxJRF8yMzdfIi8+PHBhdGggZD0iTTI3LDZoLTZWNWMwLTEuNjU0LTEuMzQ2LTMtMy0zaC00Yy0xLjY1NCwwLTMsMS4zNDYtMywzdjFINUMzLjg5Nyw2LDMsNi44OTcsMyw4djFjMCwwLjU1MiwwLjQ0OCwxLDEsMWgyNCAgYzAuNTUyLDAsMS0wLjQ0OCwxLTFWOEMyOSw2Ljg5NywyOC4xMDMsNiwyNyw2eiBNMTMsNWMwLTAuNTUxLDAuNDQ5LTEsMS0xaDRjMC41NTEsMCwxLDAuNDQ5LDEsMXYxaC02VjV6IiBpZD0iWE1MSURfMjQzXyIvPjwvc3ZnPg=="  alt=""> Limpar</button>
+                            </div>
+                        </div>
+                        <br>
+                    
+                    <br>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <h3>Resultados</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <span><img src="../img/snowflakes_black.png" class="resultado-icon" alt=""> f'(x)=<span id="r-estrela">?</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <span><img  style='width: 18px;' src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDM4NCA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwOS4yNSAxNzMuMjVjMjQuOTktMjQuOTkgMjQuOTktNjUuNTIgMC05MC41MS0yNC45OS0yNC45OS02NS41Mi0yNC45OS05MC41MSAwLTI0Ljk5IDI0Ljk5LTI0Ljk5IDY1LjUyIDAgOTAuNTEgMjUgMjUgNjUuNTIgMjUgOTAuNTEgMHptMjU2IDE2NS40OWMtMjQuOTktMjQuOTktNjUuNTItMjQuOTktOTAuNTEgMC0yNC45OSAyNC45OS0yNC45OSA2NS41MiAwIDkwLjUxIDI0Ljk5IDI0Ljk5IDY1LjUyIDI0Ljk5IDkwLjUxIDAgMjUtMjQuOTkgMjUtNjUuNTEgMC05MC41MXptLTEuOTQtMjMxLjQzbC0yMi42Mi0yMi42MmMtMTIuNS0xMi41LTMyLjc2LTEyLjUtNDUuMjUgMEwyMC42OSAzNTkuNDRjLTEyLjUgMTIuNS0xMi41IDMyLjc2IDAgNDUuMjVsMjIuNjIgMjIuNjJjMTIuNSAxMi41IDMyLjc2IDEyLjUgNDUuMjUgMGwyNzQuNzUtMjc0Ljc1YzEyLjUtMTIuNDkgMTIuNS0zMi43NSAwLTQ1LjI1eiIvPjwvc3ZnPg==" class="resultado-icon" alt=""> DRP=<span id="drp">0</span>%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h3>Gráfico</h3>
+                            </div>
+                            <div class="card-body">
+                               <div class="card">
+                                <div class="card-body">
+                                    <div class="legendas">
+                                        <div class="card-legenda"><span class="legenda"> <div class="red-circle"></div> R* (f'(x0)) </span></div>
+                                        <div class="card-legenda"> <span class="legenda"><div class="blue-circle"></div> Referência</span></div>
+                                        <div class="card-legenda"> <span class="legenda"><div class="green-circle"></div> f(X0-h)</span></div>
+                                        <div class="card-legenda"> <span class="legenda"><div class="yellow-circle"></div> f(X0+h)</span></div>
+                                    </div>
+                                    <hr>
+                                    <canvas id="myChart" style="width: 300px;"></canvas>
+                                </div>
+                               </div>
+                            </div>
+                            <div class="card-footer"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-config btn-secondary"><img  width="25px" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGlkPSJHbHlwaCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNy41MjYsMTguMDM2TDI3LDE3LjczMmMtMC42MjYtMC4zNjEtMS0xLjAwOS0xLTEuNzMyczAuMzc0LTEuMzcxLDEtMS43MzJsMC41MjYtMC4zMDQgIGMxLjQzNi0wLjgzLDEuOTI3LTIuNjYyLDEuMDk4LTQuMDk4bC0xLTEuNzMyYy0wLjgyNy0xLjQzMy0yLjY2Ni0xLjkyNS00LjA5OC0xLjA5OEwyMyw3LjMzOWMtMC42MjYsMC4zNjItMS4zNzUsMC4zNjItMiwwICBjLTAuNjI2LTAuMzYyLTEtMS4wMDktMS0xLjczMlY1YzAtMS42NTQtMS4zNDYtMy0zLTNoLTJjLTEuNjU0LDAtMywxLjM0Ni0zLDN2MC42MDhjMCwwLjcyMy0wLjM3NCwxLjM3LTEsMS43MzIgIGMtMC42MjYsMC4zNjEtMS4zNzQsMC4zNjItMiwwTDguNDc0LDcuMDM2QzcuMDQyLDYuMjA5LDUuMjAzLDYuNzAxLDQuMzc1LDguMTM0bC0xLDEuNzMyYy0wLjgyOSwxLjQzNi0wLjMzOCwzLjI2OSwxLjA5OCw0LjA5OCAgTDUsMTQuMjY4QzUuNjI2LDE0LjYyOSw2LDE1LjI3Nyw2LDE2cy0wLjM3NCwxLjM3MS0xLDEuNzMybC0wLjUyNiwwLjMwNGMtMS40MzYsMC44MjktMS45MjcsMi42NjItMS4wOTgsNC4wOThsMSwxLjczMiAgYzAuODI4LDEuNDMzLDIuNjY3LDEuOTI1LDQuMDk4LDEuMDk4TDksMjQuNjYxYzAuNjI2LTAuMzYzLDEuMzc0LTAuMzYxLDIsMGMwLjYyNiwwLjM2MiwxLDEuMDA5LDEsMS43MzJWMjdjMCwxLjY1NCwxLjM0NiwzLDMsM2gyICBjMS42NTQsMCwzLTEuMzQ2LDMtM3YtMC42MDhjMC0wLjcyMywwLjM3NC0xLjM3LDEtMS43MzJjMC42MjUtMC4zNjEsMS4zNzQtMC4zNjIsMiwwbDAuNTI2LDAuMzA0ICBjMS40MzIsMC44MjYsMy4yNzEsMC4zMzQsNC4wOTgtMS4wOThsMS0xLjczMkMyOS40NTMsMjAuNjk4LDI4Ljk2MiwxOC44NjUsMjcuNTI2LDE4LjAzNnogTTE2LDIxYy0yLjc1NywwLTUtMi4yNDMtNS01czIuMjQzLTUsNS01ICBzNSwyLjI0Myw1LDVTMTguNzU3LDIxLDE2LDIxeiIgaWQ9IlhNTElEXzI3M18iLz48L3N2Zz4=" alt=""> Configurações do Gráfico da Função</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-center" id="exampleModalLabel">Configurações do Gráfico da Função</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="card">
+                        <div class="card-body config-grafico">
+                            <label for="intervalo-grafico">Intervalo [x0; x1]</label>
+                            <div class="input-group ">
+                                <input type="number" id='grafico-x0' value='-10'  placeholder="X Inicial" class="form-control">
+                                <input type="number" id='grafico-x1' value='10' placeholder='X Final' class="form-control">
+                            </div>
+                            <p></p>
+                            <label for="">Distância entre pontos</label>
+                                <input type="number" placeholder="Incremento" value='0.01' id='grafico-inc' min="0.0001" step='0.01' class="form-control ">
+                                <hr>
+                                <label for="">Quantidade de pontos: <span id='grafico-qtd-pontos'>0</span></label>
+                                
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <!--Funções-->
+        <script src="../js/centrada.js" type="module"></script>
+        <!--Bootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!--Chart.js-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </body>
+</html>

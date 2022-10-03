@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Math&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tiro+Kannada:ital@1&display=swap');
+
+html,body{
+    background-color: #e9e9e9;
+    font-family: inter, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.centralizar{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 100px;
+    
+}
+.icon{
+    width: 30px;
+    filter: invert(1);
+}
+.header{
+    padding: 20px;
+    background-color: #212121;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+
+    font-family: Inter, sans-serif;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.card-header h3{
+    text-align: center;
+}
+
+.header img{
+    width: 130px;
+}
+
+.sub-titulo{
+    margin-left: 30px;
+   
+}
+
+.grey{
+    color: grey;
+}
+
+.card-header h3, h4{
+    margin-top: 10px;
+    
+}
+
+.legendas{
+    display: flex;
+    margin-left: 30px;
+    justify-content: center;
+}
+.legenda{
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+}
+.card-legenda{
+    border: 2px solid #ededed;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #ededed;
+    margin: 5px;
+    transition: 0.5s;
+}
+
+.card-legenda:hover{
+    border: 2px solid #ededed;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #cecece;
+    margin: 5px;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.red-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    margin: 5px;
+}
+.blue-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #0d6efd;
+    
+}
+.green-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #0dfd25; 
+}
+.yellow-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #f1fd0d; 
+}
+
+.botoes{
+    padding: 20px;
+}
+
+.btn-primary{
+    background-color: #212121;
+    border: #212121;
+    transition: 0.5s;
+}
+
+.btn-primary:hover{
+    background-color: #353535;
+    border: #353535;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.btn-primary:focus{
+    background-color: #1f1f1f;
+    border: #353535;
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.302);
+}
+
+.btn-primary:active{
+    background-color: #1e1e1e;
+    border: #353535;
+    border: none;
+    box-shadow: none;
+}
+
+.card-menu{
+    margin-right: 30px;
+    max-width: 400px;
+    min-width: 400px;
+    height: 550px;
+}
+.card-menu .card-body{
+    display: block;
+    flex-wrap: wrap;
+    
+}
+.card-menu .card-footer{
+    padding: 10px;
+
+}
+.metodo-titulo{
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.thumbs{
+    height: 300px;
+    width: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+
+
+.funcao{
+    font-family: 'Tiro Kannada';
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.tiro{
+    font-family: 'Tiro Kannada';
+}
+
+.console{
+    height: 200px;
+    color: #212121;
+    /* background-color: #212121; */
+    overflow: auto;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: -1px;
+
+    font-size: 14px;
+    
+}
+
+.card-body .card-text, .card-title{
+    text-align: center;
+}
+
+.card-body .card-text{
+    font-size: 13px;
+}
+
+.resultado-icon{
+    width: 25px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.btn-config img{
+    filter: invert(1);
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+}
+
+.switcher{
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 70%;
+    
+}
+.cartoes-metodos{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+   
+}
+
+.cartoes-metodos .card{
+    width: 35vw;
+    margin: 10px;
+}
+
+.container{
+    width: 100vw;
+}
+
+.col-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

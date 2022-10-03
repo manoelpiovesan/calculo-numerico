@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="shortcut icon" href="img/snowflakes_black.png" type="image/x-icon">
+        <title>Tarefa 2 - Lagrange</title>
+    </head>
+
+    <body>
+      
+        <div class="header">
+            <img src="img/logouerj.svg" alt="">
+            <div class="sub-titulo">
+                <h1>Trabalho 2</h1>
+                <div class="grey">
+                    
+                    <span>Cálculo Numérico | 2022.1</span>
+                    <p>Professor Hermes Alves Filho</p>
+                    <h5>P<small>4</small>(X) de uma Aproximação Polinomial de Lagrange</h5>
+                </div>
+            
+            <hr>
+            <p><strong>Manoel Rodrigues</strong> | <span style="font-weight: 400;">201910073511</span> </p>
+            </div>
+        </div>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="card card-dados">
+                        <div class="card-header text-center"><h3>Dados</h3></div>
+                        <div class="card-body ">
+                           
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="pre-dados">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                  Utilizar dados pré-definidos
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <p></p>
+                                    <table class="table text-center">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Xn</th>
+                                            <th scope="col">X</th>
+                                            <th scope="col">F(x)</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody class="table-group-divider">
+                                            <tr><!-- x0 f(x0)-->
+                                                <td>
+                                                    <span>X<small>0</small></span>
+                                                </td>
+                                                <th scope="row">
+                                                    <input id="x0" placeholder='x0' type="number" class="form-control">
+                                                </th>
+                                                <td>
+                                                    <input id="fx0" placeholder='f(x0)' type="number" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr><!-- x1 f(x1)-->
+                                                <td>
+                                                    <span>X<small>1</small></span>
+                                                </td>
+                                                <th scope="row">
+                                                    <input id="x1" placeholder='x1' type="number" class="form-control">
+                                                </th>
+                                                <td>
+                                                    <input id="fx1" placeholder='f(x1)' type="number" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr><!-- x2 f(x2)-->
+                                                <td>
+                                                    <span>X<small>2</small></span>
+                                                </td>
+                                                <th scope="row">
+                                                    <input id="x2" placeholder='x2' type="number" class="form-control">
+                                                </th>
+                                                <td>
+                                                    <input id="fx2" placeholder='f(x2)' type="number" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr><!-- x3 f(x3)-->
+                                                <td>
+                                                    <span>X<small>3</small></span>
+                                                </td>
+                                                <th scope="row">
+                                                    <input id="x3" placeholder='x3' type="number" class="form-control">
+                                                </th>
+                                                <td>
+                                                    <input id="fx3" placeholder='f(x3)' type="number" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr><!-- x4 f(x4)-->
+                                                <td>
+                                                    <span>X<small>4</small></span>
+                                                </td>
+                                                <th scope="row">
+                                                    <input id="x4" placeholder='x4' type="number" class="form-control">
+                                                </th>
+                                                <td>
+                                                    <input id="fx4" placeholder='f(x4)' type="number" class="form-control">
+                                                </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                              <hr>
+                              
+                            <!-- card referencia-->
+                            
+                            <div class="row">
+                                
+                                    <div class="col">
+                                        <label for="x">X</label>
+                                        <input type="number" id="x" class="form-control" placeholder="X para aproximar">
+                                        <p></p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="referencia-checkbox">
+                                            <label class="form-check-label" for="referencia-checkbox">
+                                              Usar referência
+                                            </label>
+                                        </div>
+                                        <div id='referencia-div' style='margin-top: 10px;' hidden>
+                                            <label for="">Referência (r)</label>
+                                            <input type="number" placeholder='r' id='r' class="form-control">
+                                        </div>
+                                    </div>
+                                   
+                                
+                            </div>
+
+
+                        </div>
+                        <div class="card-footer text-center">
+                           <div class="botoes">
+                                <button class="btn btn-dark" onclick="Lagrange()"><img src="img/snowflakes.png" width="20px" alt=""> Aproximar</button>
+                                <button class="btn btn-danger" onclick="Limpar()"><img src="img/limpar.png" width="20px" alt=""> Limpar</button>
+                           </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h3>Gráfico</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="legendas">
+                                        <span class="legenda"><div class="red-circle"></div> R* </span>
+                                        <span class="legenda"><div class="blue-circle"></div> Referência</span>
+                                    </div>
+                                    <hr>
+                                    <canvas id="myChart" style="width:100%;"></canvas>
+                                </div>
+                               </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card">
+                        <div class="card-header text-center">
+                           <h3>Resultados</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body" style="font-size: 15px;">
+                                            P<small>4</small>(x)= <span id="p4x"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            R*= <span id="r-estrela"></span>
+                                            <hr>
+                                            DRP= <span id="drp-resultado"></span>%
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    L<small>0</small>= <span id="l0"></span>
+                                                    <hr>
+                                                    L<small>1</small>= <span id="l1"></span>
+                                                    <hr>
+                                                    L<small>2</small>= <span id="l2"></span>
+                                                </div>
+                                                <div class="col">
+                                                    L<small>3</small>= <span id="l3"></span>
+                                                    <hr>
+                                                    L<small>4</small>= <span id="l4"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                </div>
+            </div>
+            <br>
+            
+            <br>
+        </div>
+        <div class="footer">
+
+        </div>
+        <!--Funções-->
+        <script src="js/index.js"></script>
+        <!--Bootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!--Chart.js-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </body>
+</html>
